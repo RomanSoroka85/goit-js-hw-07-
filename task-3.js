@@ -18,9 +18,9 @@ const images = [
 
 const ul = document.querySelector("#gallery");
 console.dir(ul);
-images.forEach((element) => {
+images.map((element) => {
   const newItem = ` <li>
-    <img src="${element.url}" alt="${element.alt}" class="img">
+    <img src="${element.url}" alt="${element.alt}" class="img" width = "450px" height = "300px">
   </li> `;
   console.log(newItem);
   ul.insertAdjacentHTML("beforeend", newItem);
@@ -29,9 +29,7 @@ const newItemLi = document.querySelectorAll(".img");
 console.log(newItemLi);
 newItemLi.forEach((element) => {
   console.dir(element);
-  element.style.width = "450px";
-  element.style.height = "300px";
-});
+ });
 ul.style.listStyle = "none";
 ul.style.display = "flex";
 ul.style.justifyContent = "center";

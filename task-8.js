@@ -13,24 +13,20 @@ input.addEventListener("input", () => {
   console.log(amount);
   console.dir(input);
 });
-let red = Math.floor(Math.random() * 256);
-let green = Math.floor(Math.random() * 256);
-let blue = Math.floor(Math.random() * 256);
-let rgb = `rgb(${red},${green},${blue})`;
-console.log(rgb);
-
+const getRandomRgbNum = () => Math.floor(Math.random() * 256);
 function createBoxes(amount) {
-  let bazeSize = 30;
-  //   const box = document.createElement("div");
-  //   box.style.width = size + "px";
-  //   box.style.height = size + "px";
-  //  box.style.color =
+  let bazeSize = 20;
+
   for (let i = 0; i < amount; i++) {
     const box = document.createElement("div");
+
     let size = bazeSize + i * 10;
     box.style.width = size + "px";
     box.style.height = size + "px";
-    box.style.backgroundColor = rgb;
+    const red = getRandomRgbNum();
+    const green = getRandomRgbNum();
+    const blue = getRandomRgbNum();
+    box.style.backgroundColor = `rgb(${red},${green},${blue})`;
     divBoxes.append(box);
   }
 }
