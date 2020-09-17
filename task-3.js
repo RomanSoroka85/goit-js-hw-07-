@@ -18,23 +18,19 @@ const images = [
 
 const ul = document.querySelector("#gallery");
 console.dir(ul);
-images.map((element) => {
+const listItems = images.map((element) => {
   const newItem = ` <li>
     <img src="${element.url}" alt="${element.alt}" class="img" width = "450px" height = "300px">
   </li> `;
-  console.log(newItem);
-  ul.insertAdjacentHTML("beforeend", newItem);
+  return newItem;
 });
+ul.insertAdjacentHTML("beforeend", listItems.join(""));
 const newItemLi = document.querySelectorAll(".img");
 console.log(newItemLi);
 newItemLi.forEach((element) => {
   console.dir(element);
- });
+});
 ul.style.listStyle = "none";
 ul.style.display = "flex";
 ul.style.justifyContent = "center";
 ul.style.flexDirection = "column";
-
-
-
-//
